@@ -12,7 +12,7 @@ public class FileList {
         if(file.isDirectory()) {
             File[] files = file.listFiles();
             for(int i = 0; i < files.length; i++){
-                System.out.println(files[i].getName());
+                System.out.println("[dir] -" + files[i]);
                 printFiles(files[i]);
             }
         }else if(file.isFile()){
