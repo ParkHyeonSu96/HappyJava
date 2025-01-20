@@ -16,6 +16,7 @@ public class IoPractice1 {
             }
         } catch(IOException ex){
             System.out.println(ex);
+            System.out.println("test");
         }
     }
 }
