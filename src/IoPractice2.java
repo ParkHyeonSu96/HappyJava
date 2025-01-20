@@ -13,10 +13,8 @@ public class IoPractice2 {
             String line = "";
 
             while( (line = br.readLine()) != null) { // 한 줄 입력받는다.
-                System.out.println("=" + line);
                 bw.write(line);
                 bw.newLine();
-
             }
 
             bw.close();
