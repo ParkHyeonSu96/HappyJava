@@ -10,7 +10,7 @@ public class IoPractice1 {
             // 입력 버퍼 생성
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-            String line = null;
+            String line = "";
             while((line = bufferedReader.readLine()) != null){
                 System.out.println(line);
             }
