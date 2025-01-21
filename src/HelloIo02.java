@@ -3,7 +3,7 @@ import java.io.InputStream;
 
 public class HelloIo02 {
     public static void main(String[] args) throws Exception{
-        InputStream in = new FileInputStream("C:\\Users\\user\\Desktop\\ParkHyeonSu\\practice\\helloio01.txt");
+        InputStream in = new FileInputStream("C:\\Users\\hyuns\\Desktop\\ParkHyunSu\\Study\\helloio01.txt");
 //        int i1 = in.read();
 //        System.out.println(i1); // 1
 //
@@ -17,7 +17,7 @@ public class HelloIo02 {
 //        System.out.println(i4); // -1 (파일의 끝)
         int buf = -1;
         while((buf = in.read()) != -1){
-            System.out.println(buf);
+            System.out.println( buf);
         }
 
         in.close();
