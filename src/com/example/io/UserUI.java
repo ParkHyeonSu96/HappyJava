@@ -12,7 +12,9 @@ public class UserUI {
 
     public int menu(){
         System.out.println("1. 회원등록");
-        System.out.println("2. 회원목록보기");
+        System.out.println("2. 회원목록 보기");
+        System.out.println("3. 회원정보 수정");
+        System.out.println("4. 회원정보 삭제");
         System.out.println("5. 종료");
         int menuId = -1;
         try{
@@ -52,7 +54,7 @@ public class UserUI {
             System.out.print(user.getName());
             System.out.print("               ");
             System.out.print(user.getBirthYear());
-            System.out.print("               ");
+            System.out.println();
         }
     }
 }

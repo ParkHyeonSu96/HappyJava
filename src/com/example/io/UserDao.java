@@ -35,4 +35,12 @@ public class UserDao {
         }
         return list;
     }
+
+    public void updateUsers(List<User> list){
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename))){
+            out.writeObject(list);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 }
