@@ -26,10 +26,20 @@ public class UserUI {
         return menuId;
     }
 
-    public User regUser(){
+    public String inputEmail(){
+        System.out.println("수정할 회원의 email을 입력하세요.");
+        String email = "";
         try {
-            System.out.println("email을 입력하세요.");
-            String email = br.readLine();
+            email = br.readLine();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return email;
+    }
+
+    public User inputUser(String email){
+        try {
+            System.out.println(email + " 회원의 정보를 수정합니다.");
             System.out.println("이름을 입력하세요.");
             String name = br.readLine();
             System.out.println("생년을 입력하세요.");
@@ -44,12 +54,18 @@ public class UserUI {
         }
     }
 
-    public String getEmail(){
+    public User regUser(){
         try {
             System.out.println("email을 입력하세요.");
             String email = br.readLine();
+            System.out.println("이름을 입력하세요.");
+            String name = br.readLine();
+            System.out.println("생년을 입력하세요.");
+            String strBirthYear = br.readLine();
+            int birthYear = Integer.parseInt(strBirthYear);
 
-            return email;
+            User user = new User(email, name, birthYear);
+            return user;
         }catch(Exception ex){
             ex.printStackTrace();
             return null;
