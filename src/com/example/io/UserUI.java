@@ -44,6 +44,18 @@ public class UserUI {
         }
     }
 
+    public String getEmail(){
+        try {
+            System.out.println("email을 입력하세요.");
+            String email = br.readLine();
+
+            return email;
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return null;
+        }
+    }
+
     public void printUserList(List<User> users){
         System.out.println("email               이름               생년");
         System.out.println("=========================================");
