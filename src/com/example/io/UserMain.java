@@ -5,8 +5,8 @@ import java.util.List;
 public class UserMain {
     public static void main(String[] args) {
         UserUI userUI = new UserUI();
-        UserDao userDao = new UserDao("C:\\Users\\hyuns\\Desktop\\ParkHyunSu\\Study\\users.txt");
-        List<User> users = userDao.getUsers();
+        UserDao userDao = new UserDao("C:\\Users\\user\\Desktop\\ParkHyeonSu\\practice\\users.txt");
+        List<User> users = userDao.getUsers(); // 메모리상에 User정보를 관리한다.
         while(true) {
             int menuId = userUI.menu();
             if(menuId == 5) {
@@ -22,6 +22,7 @@ public class UserMain {
             } else if(menuId == 3) {
                 String email = userUI.inputEmail();
                 int findIndex = -1;
+
                 for(int i = 0; i < users.size(); i++){
                     User u = users.get(i);
                     if(u.getEmail().equals(email)) {
@@ -31,7 +32,6 @@ public class UserMain {
                 }
 
                 if(findIndex != -1) {
-                    System.out.println("test");
                     User updateUser = userUI.inputUser(email);
                     users.remove(findIndex);
                     users.add(updateUser);
@@ -41,20 +41,24 @@ public class UserMain {
                 }
             } else if(menuId == 4) {
                 String email = userUI.inputEmail();
-                boolean found = false;
+                int findIndex = -1;
 
                 for(int i = 0; i < users.size(); i++){
-                    if(email.equals(users.get(i).getEmail())){
-                        found = true;
-                        users.remove(i);
-                        System.out.println("삭제되었습니다.");
+                    User u = users.get(i);
+                    if(u.getEmail().equals(email)) {
+                        findIndex = i;
                         break;
                     }
                 }
 
-                if(!found){
-                    System.out.println("해당하는 이메일이 없습니다.");
+                if(findIndex != -1) {
+                    users.remove(findIndex);
+                    System.out.println("삭제하였습니다.");
+                }else {
+                    System.out.println("삭제할 회원 정보가 없습니다.");
                 }
+            }else {
+                System.out.println("해당하는 메뉴가 없습니다.");
             }
         }
     }
