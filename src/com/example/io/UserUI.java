@@ -2,6 +2,7 @@ package com.example.io;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Iterator;
 import java.util.List;
 
 public class UserUI {
@@ -72,11 +73,11 @@ public class UserUI {
         }
     }
 
-    public void printUserList(List<User> users){
+    public void printUserList(Iterator<User> iter){
         System.out.println("email               이름               생년");
         System.out.println("=========================================");
-        for(int i = 0; i < users.size(); i++){
-            User user = users.get(i);
+        while(iter.hasNext()){
+            User user = iter.next();
             System.out.print(user.getEmail());
             System.out.print("               ");
             System.out.print(user.getName());
